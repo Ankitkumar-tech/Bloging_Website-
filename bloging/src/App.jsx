@@ -13,21 +13,26 @@ import BlogInfo from "./Pages/blogInfo/BlogInfo";
 import AdminLogin from "./Pages/admin/adminLogin/AdminLogin";
 import Dashboard from "./Pages/admin/dashboard/Dashboard";
 import NoPage from "./Pages/noPage/NoPage";
+import MyState from "./context/Data/MyState";
+import { ToastBar, Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <div>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/allblogs" element={<AllBlogs />} />
-          <Route path="/bloginfo/:id" element={<BlogInfo />} />
-          <Route path="/adminlogin" element={<AdminLogin />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/*" element={<NoPage />} />
-        </Routes>
-      </Router>
+      <MyState>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/allblogs" element={<AllBlogs />} />
+            <Route path="/bloginfo/:id" element={<BlogInfo />} />
+            <Route path="/adminlogin" element={<AdminLogin />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/*" element={<NoPage />} />
+          </Routes>
+          <Toaster />
+        </Router>
+      </MyState>
     </div>
   );
 }
