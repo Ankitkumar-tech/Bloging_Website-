@@ -8,7 +8,6 @@ import {
 } from "@material-tailwind/react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { AiOutlineShareAlt, AiOutlineSearch } from "react-icons/ai";
 import myContext from "../../context/Data/MyContext";
 import SearchDialog from "../searchDialog/SearchDialog";
 import ShareDialogBox from "../shareDialogBox/ShareDialogBox";
@@ -19,7 +18,10 @@ export default function Nav() {
   const context = useContext(myContext);
   const { mode, toggleMode } = context;
 
-  // All NavList
+  //* Admin
+  const admin = localStorage.getItem("admin");
+
+  //* All NavList
   const navList = (
     <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
       <Typography
@@ -44,17 +46,21 @@ export default function Nav() {
           Blogs
         </Link>
       </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-        style={{ color: mode === "dark" ? "white" : "white" }}
-      >
-        <Link to={"/adminlogin"} className="flex items-center">
-          Admin Login
-        </Link>
-      </Typography>
+      {!admin ? (
+        <Typography
+          as="li"
+          variant="small"
+          color="blue-gray"
+          className="p-1 font-normal"
+          style={{ color: mode === "dark" ? "white" : "white" }}
+        >
+          <Link to={"/adminlogin"} className="flex items-center">
+            Admin Login
+          </Link>
+        </Typography>
+      ) : (
+        ""
+      )}
     </ul>
   );
 
@@ -63,7 +69,7 @@ export default function Nav() {
       {/* Navbar  */}
       <Navbar
         className="sticky inset-0 z-20 h-max max-w-full border-none rounded-none py-2 px-4 lg:px-8 lg:py-2"
-        style={{ background: mode === "dark" ? "#4AC29A" : "#cbb4d4" }}
+        style={{ background: mode === "dark" ? "rgb(30, 41, 59)" : "#30336b" }}
       >
         {/* Desktop View  */}
         <div className="flex items-center justify-between text-blue-gray-900">
@@ -80,7 +86,7 @@ export default function Nav() {
                 src="https://i.ibb.co/8KyjCqd/Yellow-Minimalist-Round-Shaped-Cafe-Logo-1.png"
               />
               {/* Logo Text  */}
-              <span>Ankit</span>
+              <span>Ankit Blogs</span>
             </Typography>
           </Link>
 
@@ -133,7 +139,7 @@ export default function Nav() {
                     onClick={toggleMode}
                     className=" lg:inline-block rounded-full"
                     style={{
-                      background: mode === "light" ? "#ced6e0" : "#cbb4d4",
+                      background: mode === "light" ? "#ced6e0" : "#57606f",
                       color: mode === "dark" ? "white" : "black",
                     }}
                   >
@@ -189,7 +195,7 @@ export default function Nav() {
                 ripple={false}
                 onClick={() => setOpenNav(!openNav)}
                 style={{
-                  background: mode === "light" ? "#ced6e0" : "#cbb4d4",
+                  background: mode === "light" ? "#ced6e0" : "#57606f",
                   color: mode === "dark" ? "white" : "black",
                 }}
               >
