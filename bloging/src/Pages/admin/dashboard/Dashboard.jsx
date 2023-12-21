@@ -2,11 +2,19 @@ import React, { useContext } from "react";
 import Layout from "../../../Components/layout/Layout";
 import myContext from "../../../context/Data/MyContext";
 import { Button } from "@material-tailwind/react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Dashboard() {
   const context = useContext(myContext);
   const { mode } = context;
+
+  const navigate = useNavigate();
+
+  //* Logout Function
+  const logout = () => {
+    localStorage.clear();
+    navigate("/");
+  };
   return (
     <Layout>
       <div className="py-10">
@@ -63,6 +71,7 @@ function Dashboard() {
               </Link>
               <div className="mb-2">
                 <Button
+                  onClick={logout}
                   style={{
                     background:
                       mode === "dark"
@@ -82,7 +91,7 @@ function Dashboard() {
         {/* Line  */}
         <hr
           className={`border-2
-                 ${mode === "dark" ? "border-gray-300" : "border-gray-400"}`}
+                    ${mode === "dark" ? "border-gray-300" : "border-gray-400"}`}
         />
 
         {/* Table  */}
