@@ -2,7 +2,7 @@ import { Button } from "@material-tailwind/react";
 import React, { useContext } from "react";
 import myContext from "../../context/Data/MyContext";
 import { useNavigate } from "react-router";
-
+import { Link } from "react-router-dom";
 function BlogPostCard() {
   const context = useContext(myContext);
   const { mode, getAllBlog } = context;
@@ -100,16 +100,16 @@ function BlogPostCard() {
 
           {/* See More Button  */}
           <div className="flex justify-center my-5">
-            <Button
-              style={{
-                background:
-                  mode === "dark" ? "rgb(226, 232, 240)" : "rgb(30, 41, 59)",
-                color:
-                  mode === "dark" ? "rgb(30, 41, 59)" : "rgb(226, 232, 240)",
-              }}
-            >
-              See More
-            </Button>
+            <Link to={"/allblogs"}>
+              <Button
+                style={{
+                  background:
+                    mode === "dark" ? "rgb(226, 232, 240)" : "rgb(30, 41, 59)",
+                  color:
+                    mode === "dark" ? "rgb(30, 41, 59)" : "rgb(226, 232, 240)",
+                }}
+              ></Button>
+            </Link>
           </div>
         </div>
       </section>
