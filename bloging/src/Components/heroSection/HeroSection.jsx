@@ -6,9 +6,7 @@ function HeroSection() {
   const context = useContext(myContext);
   const { mode } = context;
   return (
-    <section
-      style={{ background: mode === "dark" ? "rgb(30, 41, 59)" : "#30336b" }}
-    >
+    <section style={{ background: mode === "dark" ? "" : "white" }}>
       {/* Hero Section  */}
       <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
         {/* Main Content  */}
@@ -29,7 +27,7 @@ function HeroSection() {
 
             {/* Paragraph  */}
             <p
-              style={{ color: mode === "dark" ? "white" : "white" }}
+              style={{ color: mode === "dark" ? "white" : "black" }}
               className="sm:text-3xl text-xl font-extralight sm:mx-auto "
             >
               Here are some blogs and tutorials contributed by Ankit Blogs.

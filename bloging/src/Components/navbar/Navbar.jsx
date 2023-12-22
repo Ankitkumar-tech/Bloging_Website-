@@ -28,7 +28,7 @@ export default function Nav() {
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-normal"
+        className="text-white rounded-md px-3 py-2 text-sm font-medium"
         style={{ color: mode === "dark" ? "white" : "white" }}
       >
         <Link to={"/"} className="flex items-center">
@@ -69,7 +69,7 @@ export default function Nav() {
       {/* Navbar  */}
       <Navbar
         className="sticky inset-0 z-20 h-max max-w-full border-none rounded-none py-2 px-4 lg:px-8 lg:py-2"
-        style={{ background: mode === "dark" ? "rgb(30, 41, 59)" : "#30336b" }}
+        style={{ background: mode === "dark" ? "rgb(30, 41, 59)" : "#237A57" }}
       >
         {/* Desktop View  */}
         <div className="flex items-center justify-between text-blue-gray-900">
@@ -123,7 +123,7 @@ export default function Nav() {
                       border:
                         mode === "dark"
                           ? "2px solid rgb(226, 232, 240)"
-                          : "2px solid rgb(30, 41, 59)",
+                          : "2px solid #237A57",
                     }}
                   />
                 </div>
@@ -139,7 +139,7 @@ export default function Nav() {
                     onClick={toggleMode}
                     className=" lg:inline-block rounded-full"
                     style={{
-                      background: mode === "light" ? "#ced6e0" : "#57606f",
+                      background: mode === "light" ? "#ced6e0" : "#237A57",
                       color: mode === "dark" ? "white" : "black",
                     }}
                   >

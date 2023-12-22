@@ -1,5 +1,5 @@
 import { Button } from "@material-tailwind/react";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import myContext from "../../context/Data/MyContext";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
@@ -8,7 +8,9 @@ function BlogPostCard() {
   const { mode, getAllBlog } = context;
 
   const navigate = useNavigate();
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <section className="text-gray-600 body-font">
@@ -65,7 +67,7 @@ function BlogPostCard() {
                             style={{
                               color:
                                 mode === "dark"
-                                  ? "rgb(226, 232, 240)"
+                                  ? "#FFC220"
                                   : " rgb(30, 41, 59)",
                             }}
                           >
@@ -101,11 +103,12 @@ function BlogPostCard() {
               <Button
                 style={{
                   background:
-                    mode === "dark" ? "rgb(226, 232, 240)" : "rgb(30, 41, 59)",
-                  color:
-                    mode === "dark" ? "rgb(30, 41, 59)" : "rgb(226, 232, 240)",
+                    mode === "dark" ? "rgb(30, 41, 59)" : "rgb(30, 41, 59)",
+                  color: mode === "dark" ? "#FFC220" : "#FFC220",
                 }}
-              ></Button>
+              >
+                All Blogs
+              </Button>
             </Link>
           </div>
         </div>

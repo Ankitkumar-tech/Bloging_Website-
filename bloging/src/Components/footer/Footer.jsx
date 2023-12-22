@@ -7,7 +7,7 @@ function Footer() {
   return (
     <footer
       className="body-font"
-      style={{ background: mode === "dark" ? "rgb(30, 41, 59)" : "#30336b" }}
+      style={{ background: mode === "dark" ? "rgb(30, 41, 59)" : "#237A57" }}
     >
       {/* Left Content  */}
       <div className="container px-5 py-3 mx-auto flex items-center sm:flex-row flex-col">
@@ -66,7 +66,10 @@ function Footer() {
           </a>
 
           {/* Icon 3  */}
-          <a className="ml-3 text-gray-500">
+          <a
+            className="ml-3 text-gray-500"
+            href="https://www.instagram.com/codetalkwithankit/"
+          >
             <svg
               fill="none"
               stroke="currentColor"
@@ -82,7 +85,10 @@ function Footer() {
           </a>
 
           {/* Icon 4  */}
-          <a className="ml-3 text-gray-500">
+          <a
+            className="ml-3 text-gray-500"
+            href="https://www.linkedin.com/in/ankitkumar9053/"
+          >
             <svg
               fill="currentColor"
               stroke="currentColor"
