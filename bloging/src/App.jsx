@@ -6,7 +6,8 @@ import {
   Navigate,
 } from "react-router-dom";
 import Home from "./Pages/home/Home";
-import Blog from "./Pages/blog/blog";
+
+// import Blog from "./Pages/blog/Blog";
 import AllBlogs from "./Pages/allBlogs/AllBlogs";
 import BlogInfo from "./Pages/blogInfo/BlogInfo";
 import AdminLogin from "./Pages/admin/adminLogin/AdminLogin";
@@ -23,7 +24,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/blog" element={<Blog />} />
+          {/* <Route path="/blog" element={<Blog />} /> */}
           <Route path="/allblogs" element={<AllBlogs />} />
           <Route path="/bloginfo/:id" element={<BlogInfo />} />
           <Route path="/adminlogin" element={<AdminLogin />} />
